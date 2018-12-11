@@ -93,6 +93,7 @@
         [(octave o)
          (note (apply pitch n) (duration ms))]))))
 
+(->str
 (play!
   (part "midi-electric-piano-1")
   (panning 25)
@@ -104,7 +105,7 @@
 
   ;; (part "midi-celesta")
   ;; (panning 75)
-  #_(repeatedly 50 random-note))
+  #_(repeatedly 50 random-note)))
 
 (println "Press Ctrl-C to stop & exit.")
 
@@ -131,6 +132,45 @@
 
 (.addShutdownHook (Runtime/getRuntime)
                   (Thread. #(stop!)))
+
+
+;;;;;;
+
+(->str
+(play!
+ (part "accordion")
+       (note (pitch :c) (duration (note-length 8)))
+       (note (pitch :d))
+       (note (pitch :e :flat))
+       (note (pitch :f))
+       (note (pitch :g))
+       (note (pitch :a :flat))
+       (note (pitch :b))
+       (octave :up)
+       (note (pitch :c))))
+
+;;;;;;
+
+
+(play!
+ (tempo! 180)
+
+ (part "piano")
+ (note (pitch :e :flat))
+; (octave :down)
+ (note (pitch :d)))
+
+
+;;;;;
+
+(play!
+ (tempo! 120)
+ (part "cello")
+ (note (pitch :e )
+       (duration (note-length 8)))
+ (note (pitch :f ))
+ (note (pitch :g )))
+
 
 
 

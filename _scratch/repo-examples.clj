@@ -1,6 +1,7 @@
 (require '[alda.core :refer :all])
 ;; TODO: use qualified import in v2.0
 
+(alda "up")
 
 ;;;;;;;;;;;;;;;
 ;; across_the_sea.alda
@@ -35,4 +36,9 @@
        (note (pitch :f #_:natural)))))
 
 
-#_(alda "play" "-c" "flute: r2 g-4 a- b-2. > d-32~ e-16.~8 < b-2 a- g-1"))
+#_(alda "play" "-c" "flute: r2 g-4 a- b-2. > d-32~ e-16.~8 < b-2 a- g-1")
+
+
+(alda "down")
+
+

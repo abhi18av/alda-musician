@@ -6,7 +6,6 @@
    (apply chord (map #(note (pitch %)) notes))))
 
 
-
 ;; conjure a guitar
 (play! (part "guitar"))
 
@@ -174,12 +173,13 @@
 
 
 
-(alda "play" "-c" "piano: c1/e-/g/b")
+(alda "play" "-c" "piano: c1 / e- / g / b")
 
 
 (play!
 (tempo! 120)
 (part "piano")
+(octave! 4)
 (chord
  (note (pitch :c)
        (duration (note-length 1)))

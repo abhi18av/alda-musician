@@ -1,0 +1,2 @@
+** Start the server from command line
+** Commands for comparing the music-notation and the lisp-notation

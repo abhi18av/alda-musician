@@ -170,7 +170,22 @@
        (duration (note-length 8)))
  (note (pitch :f ))
  (note (pitch :g )))
+;;;;;;;;;;;;;;
 
+
+
+(alda "play" "-c" "piano: c1/e-/g/b")
+
+
+(play!
+(tempo! 120)
+(part "piano")
+(chord
+ (note (pitch :c)
+       (duration (note-length 1)))
+ (note (pitch :e :flat))
+ (note (pitch :g ))
+ (note (pitch :b #_:natural))))
 
 
 

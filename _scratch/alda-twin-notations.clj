@@ -1,5 +1,8 @@
 (require '[alda.core :refer :all])
 
+(alda "up")
+
+
 (alda "play" "-c" "piano: c d e f")
 
 
@@ -68,30 +71,32 @@
 (play!
  (tempo 120)
  (part "piano")
- (octave 0)
+ (octave 4)
  (note (pitch :c))
- (octave :up)
- (note (pitch :c ))
- (octave :up)
- (note (pitch :c ))
- (octave :up)
- (note (pitch :c ))
- (octave :up)
- (note (pitch :c ))
- (octave :up)
- (note (pitch :c ))
- (octave :up)
- (note (pitch :c ))
- (octave :up)
- (note (pitch :c ))
- (octave :up)
- (note (pitch :c)))
+ (octave :down)
+ (note (pitch :b :flat ))
+ (note (pitch :a ))
+ (note (pitch :g ))
+ (note (pitch :f :sharp)))
 
 
 
-
+;;;;;
 
 (alda "play" "-c" "piano: g+ f+ e+ d+ c++")
+
+(play!
+ (tempo 120)
+ (part "piano")
+ (octave 4)
+ (note (pitch :g :sharp))
+ (note (pitch :f :sharp))
+ (note (pitch :e :sharp))
+ (note (pitch :d :sharp))
+ (note (pitch :c :sharp :sharp)))
+
+
+
 
 (alda "play" "-c" "piano: o4 c4 c8 c c16 c c c c32 c c c c c c c | c1")
 

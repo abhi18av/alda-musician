@@ -100,13 +100,71 @@
 
 (alda "play" "-c" "piano: o4 c4 c8 c c16 c c c c32 c c c c c c c | c1")
 
+
+(play!
+ (tempo 120)
+ (part "piano")
+ (octave 4)
+ (note (pitch :c) (duration (note-length 4)))
+ (note (pitch :c) (duration (note-length 8)))
+ (note (pitch :c))
+ (note (pitch :c) (duration (note-length 16)))
+ (note (pitch :c))
+ (note (pitch :c))
+ (note (pitch :c))
+ (note (pitch :c) (duration (note-length 32)))
+ (note (pitch :c))
+ (note (pitch :c))
+ (note (pitch :c))
+ (note (pitch :c))
+ (note (pitch :c))
+ (note (pitch :c))
+ (note (pitch :c))
+;; Bar lines are optional in Alda ( | )
+ (note (pitch :c) (duration (note-length 1))))
+
+
+;;;;;;;
+
+
+
 (alda "play" "-c" "piano: r2 c | r4 c r8 c r4")
+
+;; TODO how to use rests in a note
+
+(play!
+ (tempo 120)
+ (part "piano")
+ (octave 4)
+ (note (pitch :c) (duration (note-length 32)))
+ (note (pitch :d :sharp)))
+
+
+
 
 (alda "play" "-c" "trombone: o2 c4.. d16 e-8 r c r")
 
 (alda "play" "-c" "piano: o2 g+1~1")
 
+;;;;
+
+
 (alda "play" "-c" "piano: o4 c1/e-/g/b")
+
+(play!
+ (tempo! 120)
+ (part "piano")
+ (octave! 4)
+ (chord
+  (note (pitch :c)
+        (duration (note-length 1)))
+  (note (pitch :e :flat))
+  (note (pitch :g ))
+  (note (pitch :b #_:natural))))
+
+;;;;
+
+
 
 (alda "play" "-c" "piano: o4 c1/e/g/>c4 < b a g | < g+1/b/>e")
 

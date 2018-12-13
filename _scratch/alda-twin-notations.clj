@@ -130,21 +130,51 @@
 
 (alda "play" "-c" "piano: r2 c | r4 c r8 c r4")
 
-;; TODO how to use rests in a note
 
 (play!
  (tempo 120)
  (part "piano")
  (octave 4)
- (note (pitch :c) (duration (note-length 32)))
- (note (pitch :d :sharp)))
+ (note (pitch :r) (duration (note-length 2)))
+ (note (pitch :c))
+ (barline)
+ (note (pitch :r) (duration (note-length 4)))
+ (note (pitch :c))
+ (note (pitch :r) (duration (note-length 8)))
+ (note (pitch :c))
+ (note (pitch :r) (duration (note-length 4))))
 
 
 
+;;;;
 
 (alda "play" "-c" "trombone: o2 c4.. d16 e-8 r c r")
 
+(play!
+ (tempo 120)
+ (part "trombone")
+ (octave 2)
+; (voice 1)
+; (panning 25)
+ (note (pitch :c) (duration (note-length 4 {:dots 2})))
+ (note (pitch :d) (duration (note-length 16)))
+ (note (pitch :e :flat) (note-length 8)
+ (note (pitch :r))
+ (note (pitch :c))
+ (note (pitch :r))))
+
+
+;;;;
+
+
 (alda "play" "-c" "piano: o2 g+1~1")
+
+(play!
+ (tempo 120)
+ (part "piano")
+ (octave 2)
+ (note (pitch :g :sharp) (duration (note-length 1)) :slur))
+
 
 ;;;;
 
@@ -167,6 +197,28 @@
 
 
 (alda "play" "-c" "piano: o4 c1/e/g/>c4 < b a g | < g+1/b/>e")
+
+(play!
+ (tempo! 120)
+ (part "piano")
+ (octave 4)
+ (chord
+ (note (pitch :c)
+        (duration (note-length 1)))
+  (note (pitch :e ))
+  (note (pitch :g ))
+  (octave :up))
+ (note (pitch :c)
+       (note-length 4))
+ (octave :down)
+ (note (pitch :b ))
+ (note (pitch :a ))
+ (note (pitch :g )))
+
+
+;;;;
+
+
 
 (alda "play" "-c" "V1: o5 c4 < b a g | e1")
 (alda "play" "-c" "V2: o4 c1/e/g | < g+/b")

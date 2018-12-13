@@ -221,9 +221,64 @@
 
 
 (alda "play" "-c" "V1: o5 c4 < b a g | e1")
+
+(play!
+ (tempo! 120)
+ (part "piano")
+ (voice 1)
+ (octave 5)
+ (note (pitch :c) (note-length 4))
+ (octave :down)
+ (note (pitch :b ))
+ (note (pitch :a ))
+ (note (pitch :g ))
+ (barline)
+ (note (pitch :e) (note-length 1)))
+
+
+
 (alda "play" "-c" "V2: o4 c1/e/g | < g+/b")
 
+
+
+(play!
+ (tempo! 120)
+ (part "piano")
+ (voice 2)
+ (octave 4)
+ (chord
+ (note (pitch :c) (note-length 1))
+ (note (pitch :e ))
+ (note (pitch :g )))
+ (barline)
+ (octave :down)
+ (chord
+  (note (pitch :g :sharp))
+  (note (pitch :b))))
+
+
+
+
+
+
+
+
+
 (alda "play" "-c" "bassoon: o2 d8 e (quant 30) f+ g (quant 99) a2")
+
+(play!
+; (tempo 120)
+ (part "bassoon")
+ (octave 2)
+ (note (pitch :d) (note-length 8))
+ (note (pitch :e ))
+ (quant 30)
+ (note (pitch :f :sharp))
+ (note (pitch :g ))
+ (quant 99)
+ (note (pitch :a) (note-length 2)))
+
+
 
 (alda "play" "-c" "bassoon: o2 d8 e (quant 30) (vol 65) f+ g (quant 99) a2")
 
